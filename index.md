@@ -10,8 +10,7 @@ tagline:
     <div>
       <h2><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h2>
       <div>
-        <em>{{ post.date | date: "%Y-%m-%d" }}</em>
-        {{ post.excerpt }}
+        <em>{{ post.date | date: "%Y-%m-%d" }}</em>      
       </div>
       <br />
       <div class="post-content-truncate">
@@ -21,17 +20,7 @@ tagline:
         {{ post.content | strip_html | truncatewords:100 }}
       {% endif %}
       </div>
-      <div>
-      {% unless post.tags == empty %}
-            <span class="tag_box inline">
-            {% assign tags_list = post.tags %}
-            {% include JB/tags_list %}
-            </span>
-          {% endunless %} 
-          </div>
-          <br />
-          <br />
-      <div><a href="{{ BASE_PATH }}{{ post.url }}">阅读更多 >></a></div>
+      <div><a class="btn btn-primary" href="{{ BASE_PATH }}{{ post.url }}">阅读更多</a></div>
     </div>
     <hr />
   {% endfor %}
