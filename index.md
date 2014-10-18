@@ -11,10 +11,16 @@ tagline:
       <h2><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h2>
       <div>
         <em>{{ post.date | date: "%Y-%m-%d" }}</em>
+        {{ post.excerpt }}
       </div>
       <br />
-      <div>{{ post.description }}</div>
-      <div>{{ post.content | more: "excerpt" }}</div>
+      <div class="post-content-truncate">
+        {% if post.content contains "<!--more-->" %}
+          {{ post.content | split:"<!--more-->" | first % }}
+          {% else %}
+        {{ post.content | strip_html | truncatewords:100 }}
+      {% endif %}
+      </div>
       <div>
       {% unless post.tags == empty %}
             <span class="tag_box inline">
