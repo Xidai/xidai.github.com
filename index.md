@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Dai Xi's Blog"
+title: "Recent Posts"
 tagline: 
 ---
 {% include JB/setup %}
