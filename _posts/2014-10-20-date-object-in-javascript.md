@@ -23,43 +23,9 @@ Date有四个构造函数, 分别接受0个参数, 一个表示毫秒数的numbe
 
 <script src="https://gist.github.com/Xidai/7902d6bf44256f7d76d3.js"></script>
 
-这四个构造函数中, 只有当不传参数的时候会采用系统设置的时区, 而当传了参数而没有指定时区的时候, 都会采用UTC时间.
 
 这里面比较容易感到confuse的是`Date(dateString)`这个构造函数, 到底`dateString`的格式可以是怎样的? 这里的`dateString`可以是符合[IETF-compliant RFC 2822 timestamps](http://tools.ietf.org/html/rfc2822#page-14)和[ISO8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15)的.
 
-<table class="table table-striped">
-    <thead>
-        <th>Format</th>
-        <th>Example</th>
-        <th>Time Zone</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>YYYY</td>
-            <td>2014</td>
-            <td>UTC</td>
-        </tr>
-        <tr>
-            <td>YYYY-MM</td>
-            <td>2014-10</td>
-            <td>UTC</td>
-        </tr>
-        <tr>
-            <td>YYYY-MM-DD</td>
-            <td>2014-10-20</td>
-            <td>UTC</td>
-        </tr>
-        <tr>
-            <td rowspan="2">YYYY-MM-DDThh:mmTZD</td>
-            <td>2014-10-20T19:00+0800(2014-10-20T19:00+08:00)</td>
-            <td>+0800</td>
-        </tr>
-        <tr>
-            <td>2014-10-20T19:00</td>
-            <td>UTC</td>
-        </tr>
-    </tbody>
-</table>
 
 ####2. 方法####
 
